@@ -1,0 +1,251 @@
+---
+title: "Markers"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+library(Seurat)
+library(tidyverse)
+Dat <- readRDS("1.initialDat(res0.5,0.6).rds")
+DefaultAssay(Dat) <- "RNA"
+# ftpt w 4 h 3 
+# vlpt w 4 h 3
+```
+
+### Overall result
+
+```{r, fig.width=6, fig.height=6}
+DimPlot(Dat, label = T)+NoLegend()
+```
+
+
+### Monocytes
+
+```{r, fig.width=12, fig.height=6}
+FeaturePlot(Dat, features = strsplit("CSF1R, MST1R, CD14, FCGR3A, MS4A7, TNFSF13", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=6}
+VlnPlot(Dat, features = strsplit("CSF1R, MST1R, CD14, MS4A7, TNFSF13", ", ")[[1]], ncol = 3)
+```
+
+### Macrophages
+
+```{r, fig.width=12, fig.height=9}
+FeaturePlot(Dat, features = strsplit("CD68, CD84, LYZ, MS4A4A, CD163, FCGR1A, CD209, FCGR2A", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=9}
+VlnPlot(Dat, features = strsplit("CD68, CD84, LYZ, MS4A4A, CD163, FCGR1A, CD209, FCGR2A", ", ")[[1]], ncol = 3)
+```
+
+### Neutrophils
+
+```{r, fig.width=12, fig.height=12}
+FeaturePlot(Dat, features = strsplit("FCGR3B, CEACAM1, CEACAM3, CD83, LAMP3, FUT4, FPR1, SIGLEC5, CSF3R, FCAR, S100A12", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=12}
+VlnPlot(Dat, features = strsplit("FCGR3B, CEACAM1, CEACAM3, CD83, LAMP3, FUT4, FPR1, SIGLEC5, CSF3R, FCAR, S100A12", ", ")[[1]], ncol = 3)
+```
+
+### Mast cells
+
+```{r, fig.width=12, fig.height=6}
+FeaturePlot(Dat, features = strsplit("TPSB2, TPSAB1, CPA3, MS4A2, HDC", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=6}
+VlnPlot(Dat, features = strsplit("TPSB2, TPSAB1, CPA3, MS4A2, HDC", ", ")[[1]], ncol = 3)
+```
+
+### DCs
+
+```{r, fig.width=12, fig.height=12}
+FeaturePlot(Dat, features = strsplit("LAMP3, CD1C, THBD, HLA-DRA, HLA-DRB1, CD80, CD86, CD209, FCER1A, CST3", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=12}
+VlnPlot(Dat, features = strsplit("LAMP3, CD1C, THBD, HLA-DRA, HLA-DRB1, CD80, CD86, CD209, FCER1A, CST3", ", ")[[1]], ncol = 3)
+```
+
+### pDCs
+
+```{r, fig.width=12, fig.height=6}
+FeaturePlot(Dat, features = strsplit("IL3RA, CLEC4C, IFNB1, HLA-DRA, HLA-DRB1", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=6}
+VlnPlot(Dat, features = strsplit("IL3RA, CLEC4C, IFNB1, HLA-DRA, HLA-DRB1", ", ")[[1]], ncol = 3)
+```
+
+### T cells
+
+```{r, fig.width=12, fig.height=6}
+FeaturePlot(Dat, features = strsplit("CD3G, CD3D, CD3E, CD2", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=6}
+VlnPlot(Dat, features = strsplit("CD3G, CD3D, CD3E, CD2", ", ")[[1]], ncol = 3)
+```
+
+### CD4 T cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("CD3D, CD4", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("CD3D, CD4", ", ")[[1]], ncol = 3)
+```
+
+### CD8 T cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("CD3D, CD8A, CD8B", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("CD3D, CD8A, CD8B", ", ")[[1]], ncol = 3)
+```
+
+### Tregs 
+
+```{r, fig.width=12, fig.height=6}
+FeaturePlot(Dat, features = strsplit("CD3D, CD4, FOXP3, CTLA4, IL2RA", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=6}
+VlnPlot(Dat, features = strsplit("CD3D, CD4, FOXP3, CTLA4, IL2RA", ", ")[[1]], ncol = 3)
+```
+
+### Naïve T cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("IL7R, CCR7", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("IL7R, CCR7", ", ")[[1]], ncol = 3)
+```
+
+### Activated T cells
+
+```{r, fig.width=12, fig.height=6}
+FeaturePlot(Dat, features = strsplit("TNF, IFNG, FOS, JUN", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=6}
+VlnPlot(Dat, features = strsplit("TNF, IFNG, FOS, JUN", ", ")[[1]], ncol = 3)
+```
+
+### Activated/ Exhausted T cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("LAG3, HAVCR2, PDCD1", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("LAG3, HAVCR2, PDCD1", ", ")[[1]], ncol = 3)
+```
+
+### Exhausted CD8 T cells
+
+```{r, fig.width=12, fig.height=9}
+FeaturePlot(Dat, features = strsplit("GZMB, ENTPD1, ITGAE, CXCL13, TIGIT, CXCR6, HAVCR2", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=9}
+VlnPlot(Dat, features = strsplit("GZMB, ENTPD1, ITGAE, CXCL13, TIGIT, CXCR6, HAVCR2", ", ")[[1]], ncol = 3)
+```
+
+### Memory CD8 T cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("EOMES, GZMK, CXCR3", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("EOMES, GZMK, CXCR3", ", ")[[1]], ncol = 3)
+```
+
+### Effector memory CD8 T cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("FGFBP2, KLRD1", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("FGFBP2, KLRD1", ", ")[[1]], ncol = 3)
+```
+
+### TH17 CD4 T cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("KLRB1, CTSH, IL26", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("KLRB1, CTSH, IL26", ", ")[[1]], ncol = 3)
+```
+
+### TFH CD4 T cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("CD200, PTPN13, BTLA", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("CD200, PTPN13, BTLA", ", ")[[1]], ncol = 3)
+```
+
+### Memory CD4 T cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("IL7R, S100A4", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("IL7R, S100A4", ", ")[[1]], ncol = 3)
+```
+
+### B cells
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("MS4A1, CD19, CD79A", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("MS4A1, CD19, CD79A", ", ")[[1]], ncol = 3)
+```
+
+### Plasma cells (B cells)
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("SLAMF7, IGKC", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("SLAMF7, IGKC", ", ")[[1]], ncol = 3)
+```
+
+### NK cells
+
+```{r, fig.width=12, fig.height=6}
+FeaturePlot(Dat, features = strsplit("GNLY, NKG7, KLRC1, KLRC3", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=6}
+VlnPlot(Dat, features = strsplit("GNLY, NKG7, KLRC1, KLRC3", ", ")[[1]], ncol = 3)
+```
+
+### Platelets
+
+```{r, fig.width=12, fig.height=3}
+FeaturePlot(Dat, features = strsplit("PPBP", ", ")[[1]], label = T, ncol = 3)
+```
+
+```{r, fig.width=12, fig.height=3}
+VlnPlot(Dat, features = strsplit("PPBP", ", ")[[1]], ncol = 3)
+```
