@@ -3,9 +3,27 @@
 Analysis code and figure-level results supporting the single-cell RNA-seq
 sections of:
 
+> Onkar S, Cui J, Zou J, Cardello C, Cillo AR, Uddin MR, Sagan A, Joy M,
+> Osmanbeyoglu HU, Pogue-Geile K, McAuliffe PF, Lucas PC, Tseng GC, Lee AV,
+> Bruno TC, Oesterreich S, Vignali DAA.
 > **Immune landscape in estrogen receptor positive breast cancer reveals a
-> divergent macrophage-driven microenvironment**
-> PMC11194444 — https://pmc.ncbi.nlm.nih.gov/articles/PMC11194444/
+> divergent macrophage-driven microenvironment.**
+> *Nature Cancer*. 2023;4(4):516–534.
+> DOI: [10.1038/s43018-023-00527-w](https://doi.org/10.1038/s43018-023-00527-w) ·
+> PMC: [PMC11194444](https://pmc.ncbi.nlm.nih.gov/articles/PMC11194444/)
+
+```bibtex
+@article{onkar2023immune,
+  title   = {Immune landscape in estrogen receptor positive breast cancer reveals a divergent macrophage-driven microenvironment},
+  author  = {Onkar, Sayali and Cui, Jian and Zou, Jian and Cardello, Carly and Cillo, Anthony R and Uddin, Mostofa Rafid and Sagan, April and Joy, Marion and Osmanbeyoglu, Hatice U and Pogue-Geile, Katherine and McAuliffe, Priscilla F and Lucas, Peter C and Tseng, George C and Lee, Adrian V and Bruno, Tullia C and Oesterreich, Steffi and Vignali, Dario AA},
+  journal = {Nature Cancer},
+  year    = {2023},
+  volume  = {4},
+  number  = {4},
+  pages   = {516--534},
+  doi     = {10.1038/s43018-023-00527-w}
+}
+```
 
 This repository contains only the parts of the original analysis project that
 fed into the **published main figures (Figure 4, Figure 5, Figure 6)**:
